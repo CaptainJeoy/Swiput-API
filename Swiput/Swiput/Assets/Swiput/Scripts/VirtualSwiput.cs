@@ -16,12 +16,13 @@ namespace SwiputAPI
 			return rect;
 		}
 
-		public abstract float EvaluateHorizontalSwipeInRectTrans (RectTransform rectTrans);
-		public abstract float EvaluateVerticalSwipeInRectTrans (RectTransform rectTrans);
+		public abstract float EvaluateHorizontalSwipeInRectTrans (RectTransform rectTrans, bool allowSwipeOverUI, string ignoreUILayer);
+		public abstract float EvaluateVerticalSwipeInRectTrans (RectTransform rectTrans, bool allowSwipeOverUI, string ignoreUILayer);
 
-		public abstract float EvaluateHorizontalSwipeRawInRectTrans (RectTransform rectTrans);
-		public abstract float EvaluateVerticalSwipeRawInRectTrans (RectTransform rectTrans);
+		public abstract float EvaluateHorizontalSwipeRawInRectTrans (RectTransform rectTrans, bool allowSwipeOverUI, string ignoreUILayer);
+		public abstract float EvaluateVerticalSwipeRawInRectTrans (RectTransform rectTrans, bool allowSwipeOverUI, string ignoreUILayer);
 
-		public abstract float EvaluateTouchInRectTrans (RectTransform rectTrans, float axisVal, ref bool isTouched);
+		public abstract float EvaluateTouch (float axisVal, ref bool isTouched, bool allowTouchOverUI, string ignoreUILayer);
+		public abstract float EvaluateTouchInRectTrans (RectTransform rectTrans, float axisVal, ref bool isTouched, bool allowTouchOverUI, string ignoreUILayer );
 	}
 }

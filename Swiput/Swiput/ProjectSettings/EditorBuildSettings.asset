@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Swiput/Examples/LotterySpin/Scene/LotteryWheel.unity
-    guid: 83af984998ab5664da20745e95fe9b76
+    path: Assets/Swiput/Examples/ShapeWar/Scene/ShapeWar.unity
+    guid: ce4b1b329e981e945b071795acdfe40c
