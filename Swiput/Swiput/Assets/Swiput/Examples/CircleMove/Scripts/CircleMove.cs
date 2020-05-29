@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using SwiputAPI;
 
 public class CircleMove : MonoBehaviour 
@@ -11,7 +9,7 @@ public class CircleMove : MonoBehaviour
 
 	private float HalfScreenWidth, HalfScreenHeight;
 
-	void Awake()
+	void Start()
 	{
 		HalfScreenWidth = Camera.main.aspect * Camera.main.orthographicSize;
 
@@ -20,14 +18,6 @@ public class CircleMove : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		float x = Swiput.HorizontalAxis ();
-		float y = Swiput.VerticalAxis ();
-
-		Vector2 moveVec = new Vector2 (x, y);
-		moveVec = moveVec * MoveSpeed * Time.deltaTime;
-
-		Rb.AddForce(moveVec, ForceMode2D.Impulse);
-
 		//Wrap circle around X axis
 		if (transform.position.x - transform.lossyScale.x > HalfScreenWidth) 
 		{
@@ -47,5 +37,13 @@ public class CircleMove : MonoBehaviour
 		{
 			transform.position = new Vector3 (transform.position.x, HalfScreenHeight, transform.position.z);
 		}
+
+		float x = Swiput.HorizontalAxis ();
+		float y = Swiput.VerticalAxis ();
+
+		Vector2 moveVec = new Vector2 (x, y);
+		moveVec = moveVec * MoveSpeed * Time.deltaTime;
+
+		Rb.AddForce(moveVec, ForceMode2D.Impulse);
 	}
 }

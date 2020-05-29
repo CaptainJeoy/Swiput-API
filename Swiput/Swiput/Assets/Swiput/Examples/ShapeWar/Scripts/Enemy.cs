@@ -151,7 +151,7 @@ public class Enemy : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D col)
 	{
-		if (col.transform.CompareTag("PlayerBullet")) 
+		if (col.transform.CompareTag("PlayerBullet") && GameManager.Instance.IsStartGame && !GameManager.Instance.IsGameOver) 
 		{
 			Destroy (col.gameObject);
 
